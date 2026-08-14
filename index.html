@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241419">
+  <meta name="description" content="Mira Stories — choices, secrets, and impossible love.">
+  <title>Mira Stories</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">MIRA STORIES</p>
+        <p class="tagline">Choices change everything.</p>
+      </div>
+      <button class="episode-pill" id="resetButton" type="button" aria-label="Restart episode">EP 01 <span>↻</span></button>
+    </header>
+
+    <section class="story-card" aria-labelledby="sceneTitle">
+      <img class="story-image" id="storyImage" src="./assets/scenes/arrival.jpg" alt="Mira in the current story scene">
+      <div class="image-wash"></div>
+      <div class="story-heading">
+        <p class="chapter" id="chapterLabel"></p>
+        <h1 id="sceneTitle"></h1>
+        <p class="location" id="locationLabel"></p>
+      </div>
+    </section>
+
+    <section class="relationship-panel" aria-label="Story attributes">
+      <div class="stat">
+        <span>Courage</span><strong id="courageValue">50</strong>
+        <i><b id="courageBar"></b></i>
+      </div>
+      <div class="stat">
+        <span>Trust</span><strong id="trustValue">50</strong>
+        <i><b id="trustBar"></b></i>
+      </div>
+      <div class="stat">
+        <span>Heart</span><strong id="heartValue">50</strong>
+        <i><b id="heartBar"></b></i>
+      </div>
+    </section>
+
+    <article class="narrative-panel">
+      <p id="sceneText"></p>
+      <div class="choice-list" id="choiceList" aria-live="polite"></div>
+      <div class="ending-panel" id="endingPanel" hidden>
+        <p class="ending-kicker">YOUR ENDING</p>
+        <h2 id="endingTitle"></h2>
+        <p>Episode 2 is coming soon. Your choices are saved on this device.</p>
+        <button class="primary-button" id="shareButton" type="button">Share my ending</button>
+        <button class="secondary-button" id="replayButton" type="button">Play another path</button>
+      </div>
+    </article>
+
+    <aside class="season-pass">
+      <div>
+        <p class="season-label">SEASON ONE</p>
+        <h2>The Bellavista Secret</h2>
+        <p>Six episodes · alternate endings · coming with Telegram Stars</p>
+      </div>
+      <span class="price-badge">50 ★</span>
+    </aside>
+
+    <footer>
+      <p>Fictional characters · SFW story experience</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
